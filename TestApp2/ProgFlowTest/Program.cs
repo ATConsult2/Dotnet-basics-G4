@@ -105,11 +105,45 @@ namespace andestech.learning2022.krasn
             }
         }
 
+        static void LoopTest() {
+                        
+            for (int i = 1; i < 4; i++)
+            {
+                Write($"{i}, ");
+            }
+            WriteLine("\b\b.");
+
+            // цикл на базе "бесконечного" цикла
+            {
+                int i = 1;
+                for (;;)
+                {
+                    if (!(i < 4)) break;
+
+                    Write($"{i}, ");
+                    i++;    
+                }
+                WriteLine("\b\b.");
+            }
+
+            {
+                int i = 1;
+                while (i<4) {
+
+                    Write($"{i}, ");
+                    i++;
+                }
+                WriteLine("\b\b.");
+            }
+
+        }
         
         static void Main(string[] args)
         {
             //passTest();
             //SumOfInt();
+
+            LoopTest();
 
             FileAccess("file1.txt", FileMode.Write | FileMode.Read);
             FileAccess("file1.txt", FileMode.Create);
@@ -120,6 +154,9 @@ namespace andestech.learning2022.krasn
             WriteLine($"Min int -> {(1<<31)}");
             WriteLine($"Max int -> {amax}");
             WriteLine($"Max int -> {int.MaxValue}");
+
+
+
 
             Write("Press any key...\n");
             ReadKey();
