@@ -24,7 +24,9 @@ namespace andestech.learning2022.krasn
                     WriteLine("Wrong number format.");
                     a = b = summa = 0;
                 }
-                else { summa = a + b; }
+                else {
+                    checked { summa = a + b; } 
+                }
 
                 WriteLine($"{a} + {b} = {summa}");
 
