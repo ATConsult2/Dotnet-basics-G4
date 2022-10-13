@@ -4,6 +4,22 @@ using static System.Console;
 
 namespace andestech.learning2022.krasn
 {
+
+    //enum FileMode { 
+    //Read=     0b1,
+    //Write=   0b10,
+    //Create= 0b100,
+    //Append=0b1000,
+    //}
+
+    enum FileMode
+    {
+        Read =   1,
+        Write =  2,
+        Create = 4,
+        Append = 8,
+    }
+
     internal class Program
     {
 
@@ -64,11 +80,46 @@ namespace andestech.learning2022.krasn
 
             WriteLine(string.Format("data={0}", data));
         }
+
+        static void FileAccess(string fileName, FileMode fmode)
+        { 
+        
+            switch(fmode)
+            {
+                case FileMode.Write:
+                    WriteLine($"Write to {fileName}..");
+                    break;
+                case FileMode.Read:
+                    WriteLine($"Read from {fileName}..");
+                    break;
+                case FileMode.Read | FileMode.Write:
+                    WriteLine($"Read and Write from {fileName}..");
+                    break;
+                case FileMode.Create:
+                    WriteLine($"Create file {fileName}..");
+                    break;
+                default:
+                    WriteLine("some ops...");
+                    break;
+
+            }
+        }
+
         
         static void Main(string[] args)
         {
             //passTest();
-            SumOfInt();
+            //SumOfInt();
+
+            FileAccess("file1.txt", FileMode.Write | FileMode.Read);
+            FileAccess("file1.txt", FileMode.Create);
+
+            int amax = unchecked((1 << 31) - 1);
+
+            WriteLine($"Min int -> {int.MinValue}");
+            WriteLine($"Min int -> {(1<<31)}");
+            WriteLine($"Max int -> {amax}");
+            WriteLine($"Max int -> {int.MaxValue}");
 
             Write("Press any key...\n");
             ReadKey();
