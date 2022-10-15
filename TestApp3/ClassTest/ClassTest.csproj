@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine5.cs" />
+    <Compile Include="Engine4.cs" />
     <Compile Include="Engine3.cs" />
     <Compile Include="Engine2.cs" />
     <Compile Include="Engine.cs" />

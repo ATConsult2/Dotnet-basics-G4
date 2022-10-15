@@ -30,11 +30,20 @@ namespace andestech.learning2022.krasn
             WriteLine(engine22.getInfo());
 
             //4
-            Engine3 engine33 = new Engine3("CCC-11-J", 300_000, 442_444);
+            Engine3 engine33 = new Engine3("ccc-11-jj", 300_000, 442_444);
             WriteLine(engine33.getInfo());
 
-            new Engine();
-            
+            //5
+            Engine4 engine44 = new Engine4("kkk-789-la", 333_000, 972_444);
+            WriteLine(engine44.getInfo());
+
+            //5
+            Engine5 engine55 = new Engine5("jjh-543-la", 333_000, 972_444);
+            WriteLine(engine55.getInfo());
+            //Engine5.FACTORY = "1111"; const!!!
+            new Engine5("jjh-543-la", 333_000, 972_444);
+
+                       
 
 
         }
