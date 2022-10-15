@@ -10,6 +10,20 @@ namespace andestech.learning2022.krasn
     internal class Program
     {
 
+        static int Summa(int multiplier, params int[] numbers) {
+            int sum = 0;
+            foreach (int number in numbers) sum += number;
+            return sum*multiplier;
+        }
+
+        static int Summa(params byte[] numbers)
+        {
+
+            int sum = 0;
+            foreach (int number in numbers) sum += number;
+            return sum;
+        }
+
         static void TrySwap(int a, int b)
         {
             int c = a;
@@ -66,6 +80,19 @@ namespace andestech.learning2022.krasn
             // 2 Randome Byte Array
             rnd.NextBytes(arr1);
             PrintByteArray(arr1);
+            WriteLine("-----------------------------");
+            WriteLine(Summa(arr1));
+            WriteLine(Summa(arr2));
+            WriteLine(Summa(1,new int[] {1,2,3,4,5,6,7,8,9}));
+            WriteLine(Summa(1, 2, 3, 4, 5, 6, 7, 8, 9));
+            
+            // Boxing & unboxing
+            int data = 22;
+            object o = data;
+            o = 122.001;
+            double data2 = (double)o;
+            WriteLine(data + " --- " + data2);
+
 
 
         }
