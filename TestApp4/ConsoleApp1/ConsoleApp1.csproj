@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E55EC03-4EF7-4A75-B416-091957B73D8F}</ProjectGuid>
+    <ProjectGuid>{D73543F5-69AE-4E54-9C6E-76FD3F49535F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ClassTest</RootNamespace>
-    <AssemblyName>ClassTest</AssemblyName>
+    <RootNamespace>ConsoleApp1</RootNamespace>
+    <AssemblyName>ConsoleApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassStructTest.cs" />
-    <Compile Include="Engine5.cs" />
-    <Compile Include="Engine4.cs" />
-    <Compile Include="Engine3.cs" />
-    <Compile Include="Engine2.cs" />
-    <Compile Include="Engine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

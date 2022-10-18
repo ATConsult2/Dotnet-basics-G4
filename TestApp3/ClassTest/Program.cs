@@ -40,10 +40,24 @@ namespace andestech.learning2022.krasn
             //5
             Engine5 engine55 = new Engine5("jjh-543-la", 333_000, 972_444);
             WriteLine(engine55.getInfo());
+            WriteLine(engine55);
             //Engine5.FACTORY = "1111"; const!!!
             new Engine5("jjh-543-la", 333_000, 972_444);
 
-                       
+            // TEST value type, ref type
+            DataClass dc1 = new DataClass { Name = 100 };
+            DataClass dc2 = dc1;
+            dc2.Name = 500;
+            WriteLine(dc1 + "---" + dc2);
+            //--------
+            WriteLine("---------------------------------");
+            DataStruct ds1 = new DataStruct { Name = 100 };
+            DataStruct ds2 = ds1;
+            ds2.Name = 500;
+            WriteLine(ds1 + "---" + ds2);
+
+
+
 
 
         }

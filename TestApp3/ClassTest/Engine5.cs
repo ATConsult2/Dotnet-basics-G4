@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace andestech.learning2022.krasn.fact
 {
-    public class Engine5
+    public class Engine5 : Object
     {
        public const string FACTORY = "F22-GG-11-KRASNOYARSK";
        private readonly int id;
@@ -42,6 +42,11 @@ namespace andestech.learning2022.krasn.fact
         public string getInfo() {
             // Mass = 0; // !!!
             return $"Engine5 {Model}, Power: {Power}, Mass: {Mass}, Id: {id}.";
+        }
+
+        public override string ToString()
+        {
+            return getInfo();
         }
 
     }
