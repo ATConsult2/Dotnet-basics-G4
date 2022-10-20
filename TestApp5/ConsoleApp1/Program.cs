@@ -55,7 +55,8 @@ namespace andestech.learning2022.krasn
 
         static void PrintCollection(IEnumerable datas)
         {
-            Write("{");
+            //if (((ICollection)datas).Count == 0) { Write("{}"); return; } 
+            Write("{"); 
             foreach (var d in datas) Write(d + ", ");
             Write("\b\b}\n");
         }
@@ -77,14 +78,79 @@ namespace andestech.learning2022.krasn
             alist2.AddRange(new ArrayList() { -200,-120,-137, 138 });
             WriteLine(alist2.Capacity + "  ----  " + alist2.Count);
             WriteLine("=======================================");
-            // ------------ LINQ --------------
+            // ------------ LINQ -------------- 1
             PrintCollection(alist2);
-            var result = from int d in alist2
-                         where d > -10 
-                         orderby d descending
-
-                         select d;
+            var result = (from int d in alist2
+                          where d > -10
+                          orderby d descending
+                          select d).ToList();
             PrintCollection(result);
+            Func<int, int, int> F1 = (x, y) => x - y;
+            result.Sort((x, y) => Math.Abs(x) - Math.Abs(y));
+            PrintCollection(result);
+            var result2 = result.Where(x => x < 50);
+            WriteLine("---------- result2 ----------");
+            PrintCollection(result2);
+            PrintCollection(alist2);
+
+            WriteLine("---------- Generic Collection ----------");
+
+            List<Balloon> balloons = new List<Balloon>();
+
+            balloons.Add(new Balloon(1));
+            balloons.Add(new Balloon(10));
+            balloons.Add(new Balloon(4));
+            balloons.Add(new Balloon(100));
+
+            balloons.Insert(2, new Balloon(50));
+            PrintCollection(balloons);
+            balloons.Sort();
+            PrintCollection(balloons);
+
+            //-----------------------------  
+            Stack<int> stack = new Stack<int>();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            PrintCollection(stack);
+            stack.Pop();
+            PrintCollection(stack);
+            WriteLine("---------------------------------");
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            PrintCollection(queue);
+            queue.Dequeue();
+            PrintCollection(queue);
+            WriteLine("---------------------------------");
+            Dictionary<int, string> dict
+                = new Dictionary<int, string> {
+                    {1, "wwww" },
+                    { -20, "HI!!"},
+                    { 2, "Hello!"}
+
+                };
+            foreach (int key in dict.Keys)
+            {
+                WriteLine($"{key} --> {dict[key]}");
+            }
+
+            var dict2 = dict.OrderBy(x => x.Key).ToDictionary(x => x.Key);
+            WriteLine("---------------------------------");
+            foreach (int key in dict2.Keys)
+            {
+                WriteLine($"{key} --> {dict2[key]}");
+            }
+
+        }
+    }
+
+    internal class MySort : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            return Math.Abs((int)y) - Math.Abs((int)x);
         }
     }
 }

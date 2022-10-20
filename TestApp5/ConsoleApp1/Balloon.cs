@@ -7,7 +7,7 @@ using static System.Console;
 
 namespace andestech.learning2022.krasn
 {
-    internal class Balloon
+    internal class Balloon : IComparable<Balloon>
     {
         public double R { get; private set; }
         private const double DELTA7 = 0.0000001;
@@ -60,6 +60,11 @@ namespace andestech.learning2022.krasn
         {
             return $"Ballon: {R:##.####}, id: {GetHashCode()}";
             
+        }
+
+        public int CompareTo(Balloon other)
+        {
+            return (int)(R - other.R);
         }
     }
 }
