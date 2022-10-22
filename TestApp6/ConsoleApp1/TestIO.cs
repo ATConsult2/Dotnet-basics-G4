@@ -47,6 +47,8 @@ namespace andestech.learning2022.krasn
                 WriteLine(br.ReadInt32());       //4
             }
 
+            // StreamReader/ StreamWriter -  txt
+
 
                  }
 
