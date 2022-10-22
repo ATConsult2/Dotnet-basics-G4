@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace andestech.learning2022.krasn
 {
     internal class Book
     {
+        public string Title { get; set; }
+        public string Author { get; set; }
+
+
+
+
     }
 }
