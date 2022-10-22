@@ -13,7 +13,7 @@ namespace andestech.learning2022.krasn
 {
     internal class TestReflection
     {
-        static void Main(string[] args)
+        public static void Main2(string[] args)
         {
 
             Type type = typeof(Book);
