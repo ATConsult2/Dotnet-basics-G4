@@ -31,6 +31,12 @@ namespace andestech.learning2022.krasn
                //
                //fs.Seek(0, SeekOrigin.Begin);
             }
+            using (FileStream fs = new FileStream("file2.txt", FileMode.OpenOrCreate))
+            {
+                byte[] barr = new byte[fs.Length];
+                fs.Read(barr, 0, barr.Length);
+                WriteLine(Encoding.UTF8.GetString(barr));
+            }
 
             using (BinaryWriter bw =
                 new BinaryWriter(new FileStream("datas.bin", FileMode.OpenOrCreate)))
