@@ -9,7 +9,7 @@ namespace andestech.learning2022.krasn
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main2(string[] args)
         {
             Library lib = new Library(new List<Book>());
             
@@ -23,6 +23,8 @@ namespace andestech.learning2022.krasn
 
             lib.NewBook -= S1;
             lib.AddBook(new Book() { Title = "Из пушки на Луну", Author = "Жюль Верн" });
+
+
 
         }
     }

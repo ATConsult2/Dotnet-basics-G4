@@ -11,7 +11,11 @@ namespace andestech.learning2022.krasn
         public string Title { get; set; }
         public string Author { get; set; }
 
-
+        private string _id = "AA-2022-23-BBB";
+        public string Id
+        { 
+          get { return _id; }
+        }
 
 
     }

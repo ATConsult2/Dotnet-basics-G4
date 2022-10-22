@@ -8,6 +8,8 @@ using static System.Console;
 namespace andestech.learning2022.krasn
 {
     public delegate void NewBookHandler(string message);
+    
+    [LogLevel]
     internal class Library
     {
         public event NewBookHandler NewBook;
