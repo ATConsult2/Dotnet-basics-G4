@@ -35,3 +35,7 @@ echo с параметрами string message, string S и int N.
 Другие операции с книгами не допускаются.
 - Подумать, какие ещё типы данных необходимы для работы библиотеки.
 
+
+## Дополнительные ссылки и материалы к курсу:
+- [MS reference src](https://referencesource.microsoft.com/)
+- [Книги](https://disk.yandex.ru/d/06YPhzW1ttkABA)
